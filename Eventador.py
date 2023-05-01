@@ -70,7 +70,7 @@ def Eventar(DictIn):
         #Substrings para el armado del string principal. 
         summary= '\nSUMMARY:'+ Materia 
         dtstamp= '\nDTSTAMP:'+ ahora 
-        UID = '\nUID:'+ str(s+1000001)
+        UID = '\nUID:'+ str(s+50000001)
         seq= '\nSEQUENCE:'+str(s)
         created = '\nCREATED:20230101T000000Z'
         description= '\nDESCRIPTION:'+ str(rtemacti)[1:-1] +'\n'
@@ -85,6 +85,12 @@ def Eventar(DictIn):
         o='\nTRANSPARENCY:OPAQUE\nEND:VEVENT'
         evento=event + o
         cal= cal + evento
+    sf= s+100
+
+    with open('Sq.txt', "r+") as f:
+        f.truncate(0)
+        f.write(str(sf))
+    print("Secuencia de Calendario Actualizada")
 
     cal=cal+ '\nEND:VCALENDAR'
     maxdate=mindate+timedelta(days=4)
