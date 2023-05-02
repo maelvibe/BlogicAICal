@@ -7,6 +7,7 @@ from Diccionador import* #Este script genera el diccionario para el json
 from Eventador import* #VERSION 2: Este script convierte la variable DictPrevio en un evento. 
 from pathlib import Path #Permite exraer el filepath del json final
 
+
 #Aún no sé qué hacer con este JSON ya que cambié el engoque a la creación de un ICS, lo voy a comentar pero no lo voy a borrar. 
 
 def Reader(ARFile):
@@ -20,14 +21,14 @@ def Reader(ARFile):
 
     #El diccionario previo obtenido se vuelca a un json. Se usa jsondump porque permite mantener las tildes del texto.
 
-    #filen='ActiveReports.json'
-    #with open(filen, 'w', encoding="utf-8") as fichero:
-    #    str(DictPrevio).encode('utf-8')
-    #    json.dump(DictPrevio, fichero, indent=4, ensure_ascii=False)
-    #filena=str(Path.cwd())
-    #filename= filena+"\\"+filen
-    #return (filename)
-    return
+    filen='Output\\Agenda.json'
+    with open(filen, 'w', encoding="utf-8") as fichero:
+        str(DictPrevio).encode('utf-8')
+        json.dump(DictPrevio, fichero, indent=4, ensure_ascii=False)
+    filena=str(Path.cwd())
+    filename= filena+"\\"+filen
+    return (filename)
+
 
 
 

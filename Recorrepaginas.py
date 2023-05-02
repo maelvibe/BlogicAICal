@@ -2,6 +2,7 @@ import pdfplumber as pdfp
 
 #Esta funcion recorre todas las paginas del PDF y las guarda con su texto íntegro en una lista, por cada mitad de pagina.
 def TextoCompleto(File):
+    print(File)
     ListOut=[]
     i=0
     with pdfp.open(File) as pdf:
@@ -22,5 +23,4 @@ def TextoCompleto(File):
             ListOut.append(right_text)
             
     print("Páginas Extraidas",i)
-
     return (ListOut)

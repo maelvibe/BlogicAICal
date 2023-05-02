@@ -15,11 +15,12 @@ Viernes= {"1": "Inglés (Grammar, Reading, Speech)","2": "Inglés (Grammar, Read
 
 DiaMaterias= {"0":Lunes,"1":Martes,"2":Miercoles,"3":Jueves,"4":Viernes}
 
-
-
 #Esta funcion recibe una materia y un dia, y devuelve la hora de inicio. Recorre el diccionario DIaMaerias para encontrar el dia, y luego recorre el subdiccionario con el nombre de la materia para encontrar el bloque horario. Finalmente extrae las horas de inicio de el diccionario de horarios y si hay mas de una elige la mas temprana.
 def Begins(Materia, Dia):
-    beg=0
+    beg=time(0,0,0)
+    end=time(0,0,0)
+
+
     diaa=DiaMaterias[str(Dia)]
     horas=[]
     
@@ -28,12 +29,33 @@ def Begins(Materia, Dia):
             h=Horarios[k]
             horas.append(h)
 
-    if horas:
+    if len(horas) > 1:
         beg=min(horas)
         end=max(horas)
+    elif len(horas) ==1:
+        beg=min(horas)
+        end=min(horas)
     
     return beg,end
 
+def DiaSem(Num):
+    if Num==0:
+        ds="Lunes"
+    elif Num==1:
+        ds= "Martes"
+    elif Num==2:
+        ds= "Miercoles"
+    elif Num==3:
+        ds= "Jueves"
+    elif Num==4:
+        ds= "Viernes"
+    elif Num==5:
+        ds= "Sabado"
+    elif Num==6:
+        ds= "Domingo"
+
+    return ds
+    
 
 
 
