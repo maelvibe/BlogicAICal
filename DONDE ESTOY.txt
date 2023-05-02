@@ -1,0 +1,10 @@
+02/05 - Creé un gui sencillo que funciona, estoy viendo de compilar el exe para lo caul ya agregué python al path y installe pyinstaller, pero ademas 
+tengo que ver PORQUÉ se corre una agenda anterior, como si quedara en cache. y tengo que correrlo dos veces para que corra la agenda correcta. 
+
+PLANES:
+
+Quiero que este coso permita cargar un horario (¿Una tabla quizas?), con lo cual habria que definir los nombres de las materias de una manera más dinámica,
+porque tienen que ser tal y como salen de la agenda. ¿Quizas autodetectar el grado?¿Guardar las tablas en alguna memoria? ¿Ofrecer la posibilidad de que se
+maneje mas de un horario? Yo tengo uno solo pero que se yo, capaz alguien quiere manejar varias agendas. O poder hacerlo dinamico para cambiar de año.  
+
+Una web, someday. Para esto tiene que existir la posibilidad de descargar la agenda. 
