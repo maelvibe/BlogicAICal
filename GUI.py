@@ -25,20 +25,14 @@ def select_file():
         initialdir='/',
         filetypes=filetypes)
     
+    global ARFile 
     ARFile = filename.replace("/", "\\")
-    print(ARFile)
-    
-    with open('fn.txt', "r+") as f:
-        f.truncate(0)
-        f.write(ARFile)
-
-with open('fn.txt') as f:
-        fn = f.readlines()
+                                                                                                            
 
 # Boton Seleccionar
 btseleccionar = ttk.Button(root,text='Seleccione un Archivo', command=select_file)
 
-btTrans=ttk.Button(root, text='Transformar Archivo', command= lambda : Caller(fn[0]))
+btTrans=ttk.Button(root, text='Transformar Archivo', command= lambda : Caller(ARFile))
 
 
 
