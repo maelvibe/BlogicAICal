@@ -1,5 +1,13 @@
-02/05 - Creé un gui sencillo que funciona, estoy viendo de compilar el exe para lo caul ya agregué python al path y installe pyinstaller, pero ademas 
-tengo que ver PORQUÉ se corre una agenda anterior, como si quedara en cache. y tengo que correrlo dos veces para que corra la agenda correcta. 
+08/05 - Necesito que las materias que no tienen agenda en BLogic se reflejen en el calendario. El gui funciona, aun no lo he compilado en pyinstaller, y no tengo planes aun 
+de hacer un horario dinámico pero lo tengo en cuenta. Creo que la solucion a esto es crear un horario dinamico, justamente, donde se genere el horario cada vez, asi se
+compara con lo que esta en la agenda. 
+
+
+02/05 - Creé un gui sencillo que funciona, estoy viendo de compilar el exe para lo caul ya agregué python al path y installe pyinstaller, 
+
+
+SOLUCIONADO: tengo que ver PORQUÉ se corre una agenda anterior, como si quedara en cache. y tengo que correrlo dos veces para que corra la agenda correcta.
+            Solucion: Se configuró el 
 
 PLANES:
 

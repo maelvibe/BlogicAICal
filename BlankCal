@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:3CIJA
+X-WR-TIMEZONE:America/Panama
+X-WR-CALDESC:Calendario de 3ro C
+BEGIN:VEVENT
+SUMMARY:Ciencias Naturales
+DTSTAMP:20230504T233552Z
+UID:50016488
+SEQUENCE:16487
+CREATED:20230101T000000Z
+DESCRIPTION:' Movimientos y capas de la Tierra.\n\n1- Explicación del  tema. Taller inter@ctivo\n2- Tener para la clase: libro, cuaderno, lápiz de escribir,\n     lápices de colores completos y sacapuntas.\n'
+LOCATION:Instituto Justo Arosemena\, Brisas del Golf\, San Miguelito\, Panamá
+DTEND;TZID=America/Panama:20221114T131000
+DTSTART;TZID=America/Panama:20221114T123000
+NAME:Ciencias Naturales
+TRANSPARENCY:OPAQUE
+END:VEVENT
+END:VCALENDAR
