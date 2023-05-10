@@ -3,9 +3,8 @@ from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.filedialog import asksaveasfile
 from MAIN import Caller
-import re
 
-# create the root window
+# Ventana
 root = tk.Tk()
 root.title('Agenda BLogic a ICal')
 root.resizable(False, False)
@@ -40,6 +39,6 @@ lbl.pack()
 btseleccionar.pack()
 btTrans.pack()
 
-# run the application
+# Aplicación:
 root.mainloop()
 

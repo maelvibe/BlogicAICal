@@ -12,13 +12,14 @@ from pathlib import Path #Permite exraer el filepath del json final
 
 def Reader(ARFile):
     #Este script toma un pdf de Active Reports Generado por BLogic de Instituto Justo Arosemena, lo separa por materias, y carga cad materia de la agenda por separado en un json
+    
     print(ARFile)
-    ListPorPag=TextoCompleto(ARFile) #se obtiene una lista donde cada página es un item.
+    ListPorPag, grupo =TextoCompleto(ARFile) #se obtiene una lista donde cada página es un item.
     ListPorMat=Listador(ListPorPag) #se obteiene una lista con cada materia separada en string completo
     DictPrevio=Diccionador(ListPorMat) #Envia la lista por materia y recibe un diccionario donde cada seccion de cada materia esta separado
     Evento=Eventar(DictPrevio)#Envia el DictPrevio al Eventador
 
-
+    print (grupo)
     #El diccionario previo obtenido se vuelca a un json. Se usa jsondump porque permite mantener las tildes del texto.
 
     filen='Output\\Agenda.json'

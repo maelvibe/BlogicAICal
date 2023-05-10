@@ -1,36 +1,83 @@
-# import required modules
+import datatables as dt
+from MAIN import grupo
 from tkinter import *
-import pandas as pd
-  
-# Create an instance of tkinter frame
-window = Tk()
-  
-# Set the size of the tkinter window
-window.geometry("300x200")
-  
-# Load data from source
-df = pd.read_excel("data.xlsx")
-  
-# Extract number of rows and columns
-n_rows = df.shape[0]
-n_cols = df.shape[1]
-  
-# Extracting columns from the data and
-# creating text widget with some
-# background color
-column_names = df.columns
-i=0
-for j, col in enumerate(column_names):
-    text = Text(window, width=16, height=1, bg = "#9BC2E6")
-    text.grid(row=i,column=j)
-    text.insert(INSERT, col)
+from tkinter import ttk
+
+ws=Tk()
+
+ws.title('PythonGuides')
+
+set = ttk.Treeview(ws)
+set.pack()
+
+set['columns']= ('id', 'full_Name','award')
+set.column("#0", width=0,  stretch=NO)
+set.column("id",anchor=CENTER, width=80)
+set.column("full_Name",anchor=CENTER, width=80)
+set.column("award",anchor=CENTER, width=80)
+
+set.heading("#0",text="",anchor=CENTER)
+set.heading("id",text="ID",anchor=CENTER)
+set.heading("full_Name",text="Full_Name",anchor=CENTER)
+set.heading("award",text="Award",anchor=CENTER)
+
+#data
+data  = [
+    [1,"Jack","gold"],
+    [2,"Tom","Bronze"]
+
+]
+
+global count
+count=0
+    
+for record in data:
       
-  
-# adding all the other rows into the grid
-for i in range(n_rows):
-    for j in range(n_cols):
-        text = Text(window, width=16, height=1)
-        text.grid(row=i+1,column=j)
-        text.insert(INSERT, df.loc[i][j])
-  
-window.mainloop()
+    set.insert(parent='',index='end',iid = count,text='',values=(record[0],record[1],record[2]))
+       
+    count += 1
+
+
+
+Input_frame = Frame(ws)
+Input_frame.pack()
+
+id = Label(Input_frame,text="ID")
+id.grid(row=0,column=0)
+
+full_Name= Label(Input_frame,text="Full_Name")
+full_Name.grid(row=0,column=1)
+
+award = Label(Input_frame,text="Award")
+award.grid(row=0,column=2)
+
+id_entry = Entry(Input_frame)
+id_entry.grid(row=1,column=0)
+
+fullname_entry = Entry(Input_frame)
+fullname_entry.grid(row=1,column=1)
+
+award_entry = Entry(Input_frame)
+award_entry.grid(row=1,column=2)
+
+def input_record():
+    
+
+    global count
+   
+    set.insert(parent='',index='end',iid = count,text='',values=(id_entry.get(),fullname_entry.get(),award_entry.get()))
+    count += 1
+
+   
+    id_entry.delete(0,END)
+    fullname_entry.delete(0,END)
+    award_entry.delete(0,END)
+     
+#button
+Input_button = Button(ws,text = "Input Record",command= input_record)
+
+Input_button.pack()
+
+
+
+ws.mainloop()
